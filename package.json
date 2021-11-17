@@ -21,7 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eslint": "eslint . --ext .js --ext .jsx",
+    "lint": "eslint . --ext .js --ext .jsx && yarn run format:check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ./",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -49,6 +51,7 @@
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "eslint-plugin-react": "^7.27.0",
+    "prettier": "2.4.1",
     "redux-devtools-extension": "^2.13.9"
   }
 }
