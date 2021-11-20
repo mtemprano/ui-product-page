@@ -1,4 +1,41 @@
 .TopSection {
-    width: 70%;
-    display: flex;
+  width: 70%;
+  margin-top: 32px;
+  background-color: #D4F1F8;
+  border-radius: 10px;
+}
+
+.TopSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.TopSectionWrapper .SubSection {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.TopSectionWrapper .SearchSection {}
+
+.SubSection .item {
+  padding: 8px;
+  flex-basis: 25%;
+  border-radius: 10px;
+  border: none;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.SubSection button {
+  background-color: #A7DBF3;
+}
+
+.SubSection button:active {
+  background-color: #5DACD4;
+}
+
+.SubSection select {
+  background-color: white;
 }

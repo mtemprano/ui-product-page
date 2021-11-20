@@ -1,4 +1,5 @@
-import SearchBox from './SearchBar/SearchBar'
-import TopSection from './TopSection/TopSection'
+import TopSection from "./TopSection/TopSection"
+import ProductList from "./ProductList/ProductList"
+import PaginationBar from "./PaginationBar/PaginationBar"
 
-export { SearchBox, TopSection }
+export { TopSection, ProductList, PaginationBar }

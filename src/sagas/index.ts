@@ -1,7 +1,15 @@
 import { all, call, put, takeLatest } from "redux-saga/effects"
 import { fetchItems } from "../helpers"
 import type { ProductListItem } from "../helpers"
-import { fetchRequested, fetchSucceeded, fetchFailed } from "../actions"
+import {
+  fetchRequested,
+  fetchSucceeded,
+  fetchFailed,
+  changeSortTypeBy,
+  changeSearchText,
+  changeSortBy,
+  changePaginationIndex,
+} from "../actions"
 
 function* fetchData() {
   try {
@@ -12,10 +20,18 @@ function* fetchData() {
   }
 }
 
+function* resetPageNumber() {
+    yield put(changePaginationIndex(1))
+}
+
 function* watchFetchData() {
   yield takeLatest(fetchRequested.toString(), fetchData)
 }
 
+function* watchChangeFilterTypes() {
+  yield takeLatest([changeSortTypeBy.toString(), changeSearchText.toString(), changeSortBy.toString()], resetPageNumber)
+}
+
 export default function* rootSaga() {
-  yield all([watchFetchData()])
+  yield all([watchFetchData(), watchChangeFilterTypes()])
 }

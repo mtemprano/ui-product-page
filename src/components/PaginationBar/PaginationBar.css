@@ -1,0 +1,35 @@
+.PaginationBar {
+  margin-top: 24px;
+  background-color: #D4F1F8;
+  width: 70%;
+  border-radius: 10px;
+  display: flex;
+  padding: 8px 0px 8px 0px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.PaginationArrow {
+  font-size: x-large;
+  cursor: pointer;
+  padding: 4px 4px 4px 4px;
+}
+
+.PageNumbersContainer {
+  margin-right: 16px;
+  margin-left: 16px;
+  padding-top: 10px;
+}
+
+.PageNumber {
+  background-color: #A7DBF3;
+  padding: 4px 12px 4px 12px;
+  border-radius: 10px;
+  margin-left: 8px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.SelectedPageNumber {
+  background-color: #5DACD4;
+}

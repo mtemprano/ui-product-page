@@ -1,33 +1,60 @@
-import React, { useState } from "react"
-import PropTypes from "prop-types"
-import { useDispatch, useSelector } from "react-redux"
-import SearchBar from "../SearchBar/SearchBar";
+import React from "react"
+import {useDispatch, useSelector} from "react-redux"
+import SearchBar from "./SearchBar/SearchBar"
+import {changeSortBy, changeSortTypeBy} from "../../actions";
+import { getChangeSortBy } from "../../selectors";
 import "./TopSection.css"
 
-const TopSection = () => {
-    const handleOnSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        console.log(e.target.value)
-    }
-
-    return (
-        <div className="TopSection">
-            <SearchBar />
-            <div>
-                <select name="sortBy" onChange={handleOnSortChange}>
-                    <option value="">Sort by</option>
-                    <option value="Title">Title</option>
-                    <option value="Description">Description</option>
-                    <option value="Price">Price</option>
-                    <option value="Email">Email</option>
-                </select>
-                <button type="button">Show favourites</button>
-            </div>
-        </div>
-    )
+export enum SortValues {
+  None = '',
+  Title = "title",
+  Description = "description",
+  Price = "price",
+  Email = "email",
 }
 
-TopSection.propTypes = {}
+export enum SortType {
+  Asc = "Asc",
+  Desc = "Desc",
+}
 
-TopSection.defaultProps = {}
+const TopSection = () => {
+  const dispatch = useDispatch();
+  const sortBy = useSelector(getChangeSortBy)
+
+  const handleOnSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    dispatch(changeSortBy(e.target.value))
+  }
+
+  const handleOnSortTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    dispatch(changeSortTypeBy(e.target.value))
+  }
+
+  return (
+    <div className="TopSection">
+      <div className="TopSectionWrapper">
+        <SearchBar />
+        <div className="SubSection">
+          { sortBy &&
+            <select className="item" name="sortType" onChange={handleOnSortTypeChange}>
+              <option value={SortType.Asc}>Asc</option>
+              <option value={SortType.Desc}>Desc</option>
+            </select>
+          }
+          <select className="item" name="sortBy" onChange={handleOnSortChange}>
+            <option value={SortValues.None}>Sort by</option>
+            <option value={SortValues.Title}>Title</option>
+            <option value={SortValues.Description}>Description</option>
+            <option value={SortValues.Price}>Price</option>
+            <option value={SortValues.Email}>Email</option>
+          </select>
+          <button className="item" type="button">
+            Show favourites
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default TopSection

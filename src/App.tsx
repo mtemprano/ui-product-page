@@ -1,16 +1,32 @@
-import React from "react"
-import { useDispatch } from "react-redux"
+import React, { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import { fetchRequested } from "./actions"
-import { TopSection } from './components'
+import { TopSection, ProductList, PaginationBar } from "./components"
+import { getIsFetchLoading } from "./selectors"
+
 import "./App.css"
 
 function App() {
   const dispatch = useDispatch()
-  dispatch(fetchRequested())
+  const isFetchLoading = useSelector(getIsFetchLoading)
 
-  return <div className="App">
-    <TopSection />
-  </div>
+  useEffect(() => {
+    dispatch(fetchRequested())
+  }, [])
+
+  return (
+    <div className="App">
+      {isFetchLoading ? (
+        <span>...Loading</span>
+      ) : (
+        <>
+          <TopSection />
+          <ProductList />
+          <PaginationBar />
+        </>
+      )}
+    </div>
+  )
 }
 
 export default App
