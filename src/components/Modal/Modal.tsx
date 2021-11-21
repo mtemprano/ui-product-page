@@ -2,6 +2,7 @@ import React from "react";
 import "./Modal.css"
 import {showFavouritesModal} from "../../actions";
 import {useDispatch} from "react-redux";
+import {ProductList} from "../";
 
 const Modal = () => {
     const dispatch = useDispatch()
@@ -14,7 +15,7 @@ const Modal = () => {
         <div className="Modal">
             <div className="ModalContent">
                 <span className="Close" onClick={handleHideFavouritesClick}>&times;</span>
-                <p>Some text in the Modal..</p>
+                <ProductList isSimplified={true} isFavourites={true} />
             </div>
         </div>
     )

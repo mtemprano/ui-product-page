@@ -5,5 +5,8 @@ import getPaginationIndex from "./getPaginationIndex"
 import getProductListSearch from "./getProductListSearch"
 import getChangeSortBy from "./getChangeSortBy"
 import getShowFavouritesModal from "./getShowFavouritesModal"
+import getFavouritesList from "./getFavouritesList"
+import makeGetIsFavourite from "./makeGetIsFavourite"
+import getFullFavouritesList from "./getFullFavouritesList"
 
-export { getFilteredPageItems, getIsFetchLoading, getListItems, getPaginationIndex, getProductListSearch, getChangeSortBy, getShowFavouritesModal }
+export { getFilteredPageItems, getIsFetchLoading, getListItems, getPaginationIndex, getProductListSearch, getChangeSortBy, getShowFavouritesModal, getFavouritesList, makeGetIsFavourite, getFullFavouritesList }

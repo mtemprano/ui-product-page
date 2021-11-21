@@ -4,3 +4,9 @@
   flex-direction: column;
   margin-top: 24px;
 }
+
+.SimplifiedListWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}

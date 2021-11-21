@@ -1,28 +1,59 @@
-import React from "react"
-import "./ListItem.css"
+import React, {useMemo} from "react"
+import {useDispatch, useSelector} from "react-redux";
 import {ExtendedProductListItem} from "../../../helpers";
+import {addItemToFavourites, removeItemFromFavourites} from "../../../actions";
+import {makeGetIsFavourite} from "../../../selectors";
+import "./ListItem.css"
+import classNames from "classnames";
 
-type ListItemProps = ExtendedProductListItem;
+type ListItemProps = ExtendedProductListItem & { isSimplified: boolean };
 
-const ListItem = ({ title, description, price, email, image }: ListItemProps) => {
+const ListItem = ({ title, description, price, email, image, id, isSimplified }: ListItemProps) => {
+  const dispatch = useDispatch();
+  // The following code will create a selector instance for every component instance for proper memoization
+  const memoizedMakeGetIsFavourite = useMemo(makeGetIsFavourite, [])
+  const isFavourite = useSelector((state) => memoizedMakeGetIsFavourite(state, id))
+
+  const handleAddToFavouritesClick = () => {
+    dispatch(addItemToFavourites(id))
+  }
+
+  const handleRemoveFromFavouritesClick = () => {
+    dispatch(removeItemFromFavourites(id))
+  }
+
+  const dynamicClasses = classNames({ ListItem: !isSimplified }, { SimplifiedListItem: isSimplified })
+
   return (
-  <div className="ListItem">
+  <div className={dynamicClasses}>
     <img className="Image" src={image} alt={title}/>
     <div className="MiddleSection">
       <h3>{title}</h3>
-      <p>{description}</p>
-      <p>Contact through: {email}</p>
+      {
+        !isSimplified &&
+            <>
+              <p>{description}</p>
+              <p>Contact through: {email}</p>
+            </>
+      }
     </div>
     <div className="Price">
-      <button type="button">
-        Add to favs
-      </button>
-      <strong>Price: {price} €</strong>
+      {
+        isFavourite ? (
+            <button type="button" onClick={handleRemoveFromFavouritesClick}>
+              Remove from favourites
+            </button>
+        ) : (
+            !isSimplified &&
+              <button type="button" onClick={handleAddToFavouritesClick}>
+                Add to favourites
+              </button>
+        )
+      }
+      { !isSimplified && <strong>Price: {price} €</strong> }
     </div>
   </div>
   )
 }
-
-ListItem.defaultProps = {}
 
 export default ListItem

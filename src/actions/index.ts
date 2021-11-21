@@ -9,5 +9,7 @@ const changeSearchText = createAction<string>("CHANGE_SEARCH_TEXT")
 const changeSortBy = createAction<string>("CHANGE_SORT_BY")
 const changeSortTypeBy = createAction<string>("CHANGE_SORT_TYPE_BY")
 const showFavouritesModal = createAction<boolean>("SHOW_FAVOURITES_MODAL")
+const addItemToFavourites = createAction<string>("ADD_ITEM_TO_FAVOURITES")
+const removeItemFromFavourites = createAction<string>("REMOVE_ITEM_FROM_FAVOURITES")
 
-export { fetchRequested, fetchSucceeded, fetchFailed, changePaginationIndex, changeSearchText, changeSortBy, changeSortTypeBy, showFavouritesModal }
+export { fetchRequested, fetchSucceeded, fetchFailed, changePaginationIndex, changeSearchText, changeSortBy, changeSortTypeBy, showFavouritesModal, addItemToFavourites, removeItemFromFavourites }

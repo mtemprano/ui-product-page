@@ -5,6 +5,7 @@ import productListSearch from "./productListSearch"
 import changeSortBy from "./changeSortBy";
 import changeSortTypeBy from "./changeSortTypeBy";
 import showFavouritesModal from "./showFavouritesModal";
+import favourites from "./favourites";
 
 const productPageReducer = combineReducers({
   paginationIndex,
@@ -13,6 +14,7 @@ const productPageReducer = combineReducers({
   changeSortBy,
   changeSortTypeBy,
   showFavouritesModal,
+  favourites,
 })
 
 export default productPageReducer
