@@ -35,7 +35,7 @@ const ListItem = ({
   const dynamicClasses = classNames("ListItem", { SimplifiedListItem: isSimplified })
 
   return (
-    <div className={dynamicClasses}>
+    <div className={dynamicClasses} data-testid="list-item">
       <img className="Image" src={image} alt={title} />
       <div className="MiddleSection">
         <h3>{title}</h3>

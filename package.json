@@ -23,7 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "lint": "eslint . --ext .js --ext .jsx && yarn run format:check",
     "format": "prettier --write .",
     "format:check": "prettier --check ./",
@@ -48,6 +48,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -55,8 +59,13 @@
     "@types/uuid": "^8.3.3",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "cross-env": "^7.0.3",
     "eslint-plugin-react": "^7.27.0",
+    "msw": "^0.35.0",
     "prettier": "2.4.1",
     "redux-devtools-extension": "^2.13.9"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

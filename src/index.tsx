@@ -6,6 +6,10 @@ import App from "./App"
 import reportWebVitals from "./reportWebVitals"
 import store from "./store"
 
+// Uncomment the following lines to use the mock server instead of the actual back end
+// import { worker } from './mocks/browser'
+// worker.start()
+
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
