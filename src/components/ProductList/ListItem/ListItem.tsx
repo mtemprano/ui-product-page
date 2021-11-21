@@ -22,7 +22,7 @@ const ListItem = ({ title, description, price, email, image, id, isSimplified }:
     dispatch(removeItemFromFavourites(id))
   }
 
-  const dynamicClasses = classNames({ ListItem: !isSimplified }, { SimplifiedListItem: isSimplified })
+  const dynamicClasses = classNames('ListItem', { SimplifiedListItem: isSimplified })
 
   return (
   <div className={dynamicClasses}>
@@ -40,12 +40,12 @@ const ListItem = ({ title, description, price, email, image, id, isSimplified }:
     <div className="Price">
       {
         isFavourite ? (
-            <button type="button" onClick={handleRemoveFromFavouritesClick}>
+            <button className="Button" type="button" onClick={handleRemoveFromFavouritesClick}>
               Remove from favourites
             </button>
         ) : (
             !isSimplified &&
-              <button type="button" onClick={handleAddToFavouritesClick}>
+              <button className="Button" type="button" onClick={handleAddToFavouritesClick}>
                 Add to favourites
               </button>
         )
