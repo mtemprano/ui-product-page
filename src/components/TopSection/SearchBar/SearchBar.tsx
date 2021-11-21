@@ -7,7 +7,7 @@ import "./SearchBar.css"
 
 type SearchBarProps = { isFavourites?: boolean };
 
-const SearchBar = ({ isFavourites = false }: SearchBarProps) => {
+const SearchBar = ({ isFavourites = false }: SearchBarProps): JSX.Element => {
   const dispatch = useDispatch()
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {

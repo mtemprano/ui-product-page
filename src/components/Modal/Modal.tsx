@@ -5,7 +5,7 @@ import {useDispatch} from "react-redux";
 import {ProductList} from "../";
 import SearchBar from "../TopSection/SearchBar/SearchBar";
 
-const Modal = () => {
+const Modal = (): JSX.Element => {
     const dispatch = useDispatch()
 
     const handleHideFavouritesClick = () => {

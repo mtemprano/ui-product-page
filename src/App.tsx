@@ -5,7 +5,7 @@ import {TopSection, ProductList, PaginationBar, Modal} from "./components"
 import { getIsFetchLoading, getShowFavouritesModal } from "./selectors"
 import "./App.css"
 
-function App() {
+function App(): JSX.Element {
   const dispatch = useDispatch()
   const isFetchLoading = useSelector(getIsFetchLoading)
   const showFavouritesModal = useSelector(getShowFavouritesModal)

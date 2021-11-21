@@ -15,8 +15,8 @@ function* fetchData() {
   try {
     const data: Array<ExtendedProductListItem> = yield call(fetchItems)
     yield put(fetchSucceeded(data))
-  } catch (error: any) {
-    yield put(fetchFailed(error))
+  } catch (error: unknown) {
+    yield put(fetchFailed(new Error('There has been an error retrieving data. Please try again later.')))
   }
 }
 
@@ -32,6 +32,6 @@ function* watchChangeFilterTypes() {
   yield takeLatest([changeSortTypeBy.toString(), changeSearchText.toString(), changeSortBy.toString()], resetPageNumber)
 }
 
-export default function* rootSaga() {
+export default function* rootSaga(): Generator {
   yield all([watchFetchData(), watchChangeFilterTypes()])
 }

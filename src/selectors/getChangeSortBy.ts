@@ -1,1 +1,4 @@
-export default (state: any) => state.changeSortBy
+import {GlobalStateInterface} from "../helpers";
+import {SortValues} from "../components/TopSection/TopSection";
+
+export default (state: GlobalStateInterface): SortValues => state.changeSortBy

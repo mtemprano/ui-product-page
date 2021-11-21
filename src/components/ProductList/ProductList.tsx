@@ -9,7 +9,7 @@ import classNames from "classnames";
 
 type ProductListProps = { isSimplified?: boolean, isFavourites?: boolean };
 
-const ProductList = ({ isSimplified = false, isFavourites = false } : ProductListProps) => {
+const ProductList = ({ isSimplified = false, isFavourites = false } : ProductListProps): JSX.Element => {
   const filteredPageItems = useSelector(getFilteredPageItems)
   const filteredFavouritesList = useSelector(getFilteredFavourites)
   const paginationIndex = useSelector(getPaginationIndex)

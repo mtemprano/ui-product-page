@@ -6,7 +6,7 @@ import { changePaginationIndex } from "../../actions"
 import { PRODUCTS_PER_PAGE } from "../../constants"
 import "./PaginationBar.css"
 
-const PaginationBar = () => {
+const PaginationBar = (): JSX.Element => {
   const dispatch = useDispatch()
   const currentPaginationIndex = useSelector(getPaginationIndex)
   const filteredPageItems = useSelector(getFilteredPageItems)

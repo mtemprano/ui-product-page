@@ -14,7 +14,7 @@ const initialState: productionListState = {
 }
 
 const productListReducer = createReducer(initialState, (builder) => {
-  builder.addCase(fetchRequested, (state, action) => ({ ...state, loading: true }))
+  builder.addCase(fetchRequested, (state) => ({ ...state, loading: true }))
   builder.addCase(fetchSucceeded, (state, action) => ({
     ...state,
     data: action.payload,

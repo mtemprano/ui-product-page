@@ -18,7 +18,7 @@ export enum SortType {
   Desc = "Desc",
 }
 
-const TopSection = () => {
+const TopSection = (): JSX.Element => {
   const dispatch = useDispatch();
   const sortBy = useSelector(getChangeSortBy)
 

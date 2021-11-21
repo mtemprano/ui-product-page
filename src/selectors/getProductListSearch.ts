@@ -1,1 +1,3 @@
-export default (state: any) => state.productListSearch
+import {GlobalStateInterface} from "../helpers";
+
+export default (state: GlobalStateInterface): string => state.productListSearch

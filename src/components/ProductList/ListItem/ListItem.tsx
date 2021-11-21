@@ -1,6 +1,6 @@
 import React, {useMemo} from "react"
 import {useDispatch, useSelector} from "react-redux";
-import {ExtendedProductListItem} from "../../../helpers";
+import {ExtendedProductListItem, GlobalStateInterface} from "../../../helpers";
 import {addItemToFavourites, removeItemFromFavourites} from "../../../actions";
 import {makeGetIsFavourite} from "../../../selectors";
 import "./ListItem.css"
@@ -8,11 +8,11 @@ import classNames from "classnames";
 
 type ListItemProps = ExtendedProductListItem & { isSimplified: boolean };
 
-const ListItem = ({ title, description, price, email, image, id, isSimplified }: ListItemProps) => {
+const ListItem = ({ title, description, price, email, image, id, isSimplified }: ListItemProps): JSX.Element => {
   const dispatch = useDispatch();
   // The following code will create a selector instance for every component instance for proper memoization
   const memoizedMakeGetIsFavourite = useMemo(makeGetIsFavourite, [])
-  const isFavourite = useSelector((state) => memoizedMakeGetIsFavourite(state, id))
+  const isFavourite = useSelector((state: GlobalStateInterface) => memoizedMakeGetIsFavourite(state, id))
 
   const handleAddToFavouritesClick = () => {
     dispatch(addItemToFavourites(id))

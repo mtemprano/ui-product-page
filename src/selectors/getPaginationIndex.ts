@@ -1,1 +1,3 @@
-export default (state: any) => state.paginationIndex
+import {GlobalStateInterface} from "../helpers";
+
+export default (state: GlobalStateInterface): number => state.paginationIndex

@@ -1,1 +1,3 @@
-export default (state: any) => state.productList.loading
+import {GlobalStateInterface} from "../helpers";
+
+export default (state: GlobalStateInterface): boolean => state.productList.loading

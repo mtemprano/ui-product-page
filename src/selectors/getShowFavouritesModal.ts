@@ -1,1 +1,3 @@
-export default (state: any) => state.showFavouritesModal
+import {GlobalStateInterface} from "../helpers";
+
+export default (state: GlobalStateInterface): boolean => state.showFavouritesModal
