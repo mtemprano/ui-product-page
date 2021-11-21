@@ -40,19 +40,34 @@ const TopSection = (): JSX.Element => {
         <SearchBar />
         <div className="SubSection">
           {sortBy && (
-            <select className="item" name="sortType" onChange={handleOnSortTypeChange} data-testid="sortType-selector">
+            <select
+              className="item"
+              name="sortType"
+              onChange={handleOnSortTypeChange}
+              data-testid="sortType-selector"
+            >
               <option value={SortType.Asc}>Asc</option>
               <option value={SortType.Desc}>Desc</option>
             </select>
           )}
-          <select className="item" name="sortBy" onChange={handleOnSortChange} data-testid="sortBy-selector">
+          <select
+            className="item"
+            name="sortBy"
+            onChange={handleOnSortChange}
+            data-testid="sortBy-selector"
+          >
             <option value={SortValues.None}>Sort by</option>
             <option value={SortValues.Title}>Title</option>
             <option value={SortValues.Description}>Description</option>
             <option value={SortValues.Price}>Price</option>
             <option value={SortValues.Email}>Email</option>
           </select>
-          <button className="item" type="button" onClick={handleShowFavouritesClick} data-testid="show-favourites-button">
+          <button
+            className="item"
+            type="button"
+            onClick={handleShowFavouritesClick}
+            data-testid="show-favourites-button"
+          >
             Show favourites
           </button>
         </div>

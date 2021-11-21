@@ -48,12 +48,24 @@ const ListItem = ({
       </div>
       <div className="Price">
         {isFavourite ? (
-          <button className="Button" type="button" onClick={handleRemoveFromFavouritesClick} data-testid={isSimplified ? "remove-favourites-button-simple" : "remove-favourites-button"}>
+          <button
+            className="Button"
+            type="button"
+            onClick={handleRemoveFromFavouritesClick}
+            data-testid={
+              isSimplified ? "remove-favourites-button-simple" : "remove-favourites-button"
+            }
+          >
             Remove from favourites
           </button>
         ) : (
           !isSimplified && (
-            <button className="Button" type="button" onClick={handleAddToFavouritesClick} data-testid="add-favourites-button">
+            <button
+              className="Button"
+              type="button"
+              onClick={handleAddToFavouritesClick}
+              data-testid="add-favourites-button"
+            >
               Add to favourites
             </button>
           )
