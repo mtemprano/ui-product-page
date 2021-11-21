@@ -1,10 +1,10 @@
 import { createReducer } from "@reduxjs/toolkit"
 import { fetchRequested, fetchSucceeded, fetchFailed } from "../actions"
-import type { ProductListItem } from "../helpers"
+import type { ExtendedProductListItem } from "../helpers"
 
 interface productionListState {
   loading: boolean
-  data: Array<ProductListItem>
+  data: Array<ExtendedProductListItem>
   error?: Error
 }
 

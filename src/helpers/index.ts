@@ -1,5 +1,5 @@
 import { fetchItems } from "./fetchItems"
-import type { ProductListItem } from "./fetchItems"
+import type { ExtendedProductListItem } from "./fetchItems"
 
 export { fetchItems }
-export type { ProductListItem }
+export type { ExtendedProductListItem }

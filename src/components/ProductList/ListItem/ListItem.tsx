@@ -1,13 +1,8 @@
 import React from "react"
 import "./ListItem.css"
+import {ExtendedProductListItem} from "../../../helpers";
 
-type ListItemProps = {
-  title: string
-  description: string
-  price: string
-  email: string
-  image: string
-}
+type ListItemProps = ExtendedProductListItem;
 
 const ListItem = ({ title, description, price, email, image }: ListItemProps) => {
   return (

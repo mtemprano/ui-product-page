@@ -2,7 +2,7 @@ import React from "react"
 import { useSelector } from "react-redux"
 import ListItem from "./ListItem/ListItem"
 import { getPaginationIndex, getFilteredPageItems } from "../../selectors"
-import { ProductListItem } from "../../helpers"
+import { ExtendedProductListItem } from "../../helpers"
 import { PRODUCTS_PER_PAGE } from "../../constants"
 import "./ProductList.css"
 
@@ -18,7 +18,7 @@ const ProductList = () => {
     if (lastIndex > filteredPageItemsAmount) lastIndex = filteredPageItemsAmount
     const displayableProducts = filteredPageItems.slice(firstIndex, lastIndex)
 
-    return displayableProducts.map((properties: ProductListItem) => (
+    return displayableProducts.map((properties: ExtendedProductListItem) => (
       <ListItem key={`${properties.title}_productName`} {...properties} />
     ))
   }

@@ -1,6 +1,6 @@
 import { all, call, put, takeLatest } from "redux-saga/effects"
 import { fetchItems } from "../helpers"
-import type { ProductListItem } from "../helpers"
+import type { ExtendedProductListItem } from "../helpers"
 import {
   fetchRequested,
   fetchSucceeded,
@@ -13,10 +13,10 @@ import {
 
 function* fetchData() {
   try {
-    const data: Array<ProductListItem> = yield call(fetchItems)
+    const data: Array<ExtendedProductListItem> = yield call(fetchItems)
     yield put(fetchSucceeded(data))
-  } catch (error) {
-    yield put(fetchFailed(new Error("Fetch failed, please try again later")))
+  } catch (error: any) {
+    yield put(fetchFailed(error))
   }
 }
 

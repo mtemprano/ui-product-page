@@ -1,8 +1,8 @@
 import { createAction } from "@reduxjs/toolkit"
-import type { ProductListItem } from "../helpers"
+import type { ExtendedProductListItem } from "../helpers"
 
 const fetchRequested = createAction<undefined>("FETCH_REQUESTED")
-const fetchSucceeded = createAction<Array<ProductListItem>>("FETCH_SUCCEEDED")
+const fetchSucceeded = createAction<Array<ExtendedProductListItem>>("FETCH_SUCCEEDED")
 const fetchFailed = createAction<Error>("FETCH_FAILED")
 const changePaginationIndex = createAction<number>("CHANGE_PAGINATION_INDEX")
 const changeSearchText = createAction<string>("CHANGE_SEARCH_TEXT")

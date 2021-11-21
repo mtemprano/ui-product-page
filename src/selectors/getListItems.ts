@@ -1,1 +1,1 @@
-export default (state: any) => state.productList.data.items
+export default (state: any) => state.productList.data
