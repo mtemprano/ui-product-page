@@ -8,5 +8,7 @@ import getShowFavouritesModal from "./getShowFavouritesModal"
 import getFavouritesList from "./getFavouritesList"
 import makeGetIsFavourite from "./makeGetIsFavourite"
 import getFullFavouritesList from "./getFullFavouritesList"
+import getFilteredFavourites from "./getFilteredFavourites"
+import getFavouritesSearchText from "./getFavouritesSearchText"
 
-export { getFilteredPageItems, getIsFetchLoading, getListItems, getPaginationIndex, getProductListSearch, getChangeSortBy, getShowFavouritesModal, getFavouritesList, makeGetIsFavourite, getFullFavouritesList }
+export { getFilteredPageItems, getIsFetchLoading, getListItems, getPaginationIndex, getProductListSearch, getChangeSortBy, getShowFavouritesModal, getFavouritesList, makeGetIsFavourite, getFullFavouritesList, getFilteredFavourites, getFavouritesSearchText }

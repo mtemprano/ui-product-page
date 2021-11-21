@@ -1,20 +1,26 @@
 import React from "react"
 import {useDispatch} from "react-redux"
 import { debounce } from "debounce"
-import {changeSearchText} from "../../../actions";
+import classNames from "classnames";
+import {changeFavouritesSearchText, changeSearchText} from "../../../actions";
 import "./SearchBar.css"
 
-const SearchBar = () => {
+type SearchBarProps = { isFavourites?: boolean };
+
+const SearchBar = ({ isFavourites = false }: SearchBarProps) => {
   const dispatch = useDispatch()
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(changeSearchText(e.target.value))
+    if (!isFavourites) dispatch(changeSearchText(e.target.value))
+    else dispatch(changeFavouritesSearchText(e.target.value))
   }
   const debouncedChangeHandler = debounce(handleOnChange, 300)
 
+  const dynamicClasses = classNames('SearchBar', { FavouritesSearchBar: isFavourites })
+
   return (
     <input
-        className="SearchBar"
+        className={dynamicClasses}
         onChange={debouncedChangeHandler}
         type="text"
         id="searchBox"

@@ -1,20 +1,25 @@
 import React from "react";
 import "./Modal.css"
-import {showFavouritesModal} from "../../actions";
+import {changeFavouritesSearchText, showFavouritesModal} from "../../actions";
 import {useDispatch} from "react-redux";
 import {ProductList} from "../";
+import SearchBar from "../TopSection/SearchBar/SearchBar";
 
 const Modal = () => {
     const dispatch = useDispatch()
 
     const handleHideFavouritesClick = () => {
         dispatch(showFavouritesModal(false))
+        dispatch(changeFavouritesSearchText(''))
     }
 
     return (
         <div className="Modal">
             <div className="ModalContent">
-                <span className="Close" onClick={handleHideFavouritesClick}>&times;</span>
+                <div className="ModalTopSection">
+                    <SearchBar isFavourites={true} />
+                    <span className="Close" onClick={handleHideFavouritesClick}>&times;</span>
+                </div>
                 <ProductList isSimplified={true} isFavourites={true} />
             </div>
         </div>

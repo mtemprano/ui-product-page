@@ -4,3 +4,8 @@
     border: none;
     margin-bottom: 8px;
 }
+
+.FavouritesSearchBar {
+    flex-basis: 100%;
+    background-color: #D4F1F8;
+}

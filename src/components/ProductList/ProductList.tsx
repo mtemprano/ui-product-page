@@ -1,7 +1,7 @@
 import React from "react"
 import { useSelector } from "react-redux"
 import ListItem from "./ListItem/ListItem"
-import {getPaginationIndex, getFilteredPageItems, getFullFavouritesList} from "../../selectors"
+import {getPaginationIndex, getFilteredPageItems, getFilteredFavourites} from "../../selectors"
 import { ExtendedProductListItem } from "../../helpers"
 import { PRODUCTS_PER_PAGE } from "../../constants"
 import "./ProductList.css"
@@ -11,7 +11,7 @@ type ProductListProps = { isSimplified?: boolean, isFavourites?: boolean };
 
 const ProductList = ({ isSimplified = false, isFavourites = false } : ProductListProps) => {
   const filteredPageItems = useSelector(getFilteredPageItems)
-  const fullFavouritesList = useSelector(getFullFavouritesList)
+  const filteredFavouritesList = useSelector(getFilteredFavourites)
   const paginationIndex = useSelector(getPaginationIndex)
 
   const filteredPageItemsAmount = filteredPageItems.length
@@ -20,8 +20,11 @@ const ProductList = ({ isSimplified = false, isFavourites = false } : ProductLis
     let lastIndex = paginationIndex * PRODUCTS_PER_PAGE
     const firstIndex = lastIndex - PRODUCTS_PER_PAGE
     if (lastIndex > filteredPageItemsAmount) lastIndex = filteredPageItemsAmount
-    const displayableProducts = isFavourites ? fullFavouritesList : filteredPageItems.slice(firstIndex, lastIndex)
+    const displayableProducts = isFavourites ? filteredFavouritesList : filteredPageItems.slice(firstIndex, lastIndex)
 
+    if (displayableProducts.length === 0) {
+      return <h2>No elements found</h2>
+    }
     return displayableProducts.map((properties: ExtendedProductListItem) => (
       <ListItem key={`${properties.title}_productName`} {...properties} isSimplified={isSimplified} />
     ))
