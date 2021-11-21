@@ -35,10 +35,10 @@ const ListItem = ({
   const dynamicClasses = classNames("ListItem", { SimplifiedListItem: isSimplified })
 
   return (
-    <div className={dynamicClasses} data-testid="list-item">
+    <div className={dynamicClasses} data-testid={isSimplified ? "list-item-simple" : "list-item"}>
       <img className="Image" src={image} alt={title} />
       <div className="MiddleSection">
-        <h3>{title}</h3>
+        <h3 data-testid={isSimplified ? "item-title-simple" : "item-title"}>{title}</h3>
         {!isSimplified && (
           <>
             <p>{description}</p>
@@ -48,12 +48,12 @@ const ListItem = ({
       </div>
       <div className="Price">
         {isFavourite ? (
-          <button className="Button" type="button" onClick={handleRemoveFromFavouritesClick}>
+          <button className="Button" type="button" onClick={handleRemoveFromFavouritesClick} data-testid={isSimplified ? "remove-favourites-button-simple" : "remove-favourites-button"}>
             Remove from favourites
           </button>
         ) : (
           !isSimplified && (
-            <button className="Button" type="button" onClick={handleAddToFavouritesClick}>
+            <button className="Button" type="button" onClick={handleAddToFavouritesClick} data-testid="add-favourites-button">
               Add to favourites
             </button>
           )

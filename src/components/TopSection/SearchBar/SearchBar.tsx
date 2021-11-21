@@ -20,6 +20,7 @@ const SearchBar = ({ isFavourites = false }: SearchBarProps): JSX.Element => {
 
   return (
     <input
+      data-testid="search-bar"
       className={dynamicClasses}
       onChange={debouncedChangeHandler}
       type="text"
