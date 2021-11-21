@@ -19,5 +19,11 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint"],
   rules: {},
-  ignorePatterns: ["reportWebVitals.ts", "**/spec/*.tsx"],
+  ignorePatterns: [
+    "reportWebVitals.ts",
+    "**/spec/*.tsx",
+    "jest.config.js",
+    "setupTests.js",
+    "setupEnv.js",
+  ],
 }
