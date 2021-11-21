@@ -1,6 +1,6 @@
 import React from "react"
 import { useSelector, useDispatch } from "react-redux"
-import classNames from "classnames";
+import classNames from "classnames"
 import { getPaginationIndex, getFilteredPageItems } from "../../selectors"
 import { changePaginationIndex } from "../../actions"
 import { PRODUCTS_PER_PAGE } from "../../constants"
@@ -42,7 +42,9 @@ const PaginationBar = (): JSX.Element => {
     const pageNumbers = []
 
     for (let iterator = 1; iterator <= pageNumbersAmount; iterator += 1) {
-      const dynamicClasses = classNames('PageNumber', { SelectedPageNumber: iterator === currentPaginationIndex })
+      const dynamicClasses = classNames("PageNumber", {
+        SelectedPageNumber: iterator === currentPaginationIndex,
+      })
 
       pageNumbers.push(
         <span

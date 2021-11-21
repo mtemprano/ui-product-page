@@ -1,11 +1,11 @@
 .SearchBar {
-    padding: 8px;
-    border-radius: 10px;
-    border: none;
-    margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 8px;
 }
 
 .FavouritesSearchBar {
-    flex-basis: 100%;
-    background-color: #D4F1F8;
+  flex-basis: 100%;
+  background-color: #d4f1f8;
 }

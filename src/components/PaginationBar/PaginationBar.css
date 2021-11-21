@@ -1,6 +1,6 @@
 .PaginationBar {
   margin-top: 24px;
-  background-color: #D4F1F8;
+  background-color: #d4f1f8;
   width: 70%;
   border-radius: 10px;
   display: flex;
@@ -22,7 +22,7 @@
 }
 
 .PageNumber {
-  background-color: #A7DBF3;
+  background-color: #a7dbf3;
   padding: 8px 12px 8px 12px;
   border-radius: 10px;
   margin-left: 8px;
@@ -31,5 +31,5 @@
 }
 
 .SelectedPageNumber {
-  background-color: #5DACD4;
+  background-color: #5dacd4;
 }

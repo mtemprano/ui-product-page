@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchRequested } from "./actions"
-import {TopSection, ProductList, PaginationBar, Modal} from "./components"
+import { TopSection, ProductList, PaginationBar, Modal } from "./components"
 import { getIsFetchLoading, getShowFavouritesModal } from "./selectors"
 import "./App.css"
 
@@ -23,7 +23,7 @@ function App(): JSX.Element {
           <TopSection />
           <ProductList />
           <PaginationBar />
-          { showFavouritesModal && <Modal /> }
+          {showFavouritesModal && <Modal />}
         </>
       )}
     </div>

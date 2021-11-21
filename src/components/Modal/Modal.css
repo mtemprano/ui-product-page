@@ -1,39 +1,39 @@
 .Modal {
-    position: fixed;
-    z-index: 1;
-    padding-top: 32px;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+  position: fixed;
+  z-index: 1;
+  padding-top: 32px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .ModalContent {
-    display: flex;
-    flex-direction: column;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 24px;
-    border: 1px solid #888;
-    border-radius: 10px;
-    width: 50%;
-    margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 24px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 50%;
+  margin-bottom: 32px;
 }
 
 .Close {
-    align-self: flex-end;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 16px;
-    padding-left: 8px;
+  align-self: flex-end;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  padding-left: 8px;
 }
 
 .ModalTopSection {
-    display: flex;
+  display: flex;
 }
 
 .Close:hover,
 .Close:focus {
-    cursor: pointer;
+  cursor: pointer;
 }

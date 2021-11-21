@@ -11,4 +11,17 @@ import getFullFavouritesList from "./getFullFavouritesList"
 import getFilteredFavourites from "./getFilteredFavourites"
 import getFavouritesSearchText from "./getFavouritesSearchText"
 
-export { getFilteredPageItems, getIsFetchLoading, getListItems, getPaginationIndex, getProductListSearch, getChangeSortBy, getShowFavouritesModal, getFavouritesList, makeGetIsFavourite, getFullFavouritesList, getFilteredFavourites, getFavouritesSearchText }
+export {
+  getFilteredPageItems,
+  getIsFetchLoading,
+  getListItems,
+  getPaginationIndex,
+  getProductListSearch,
+  getChangeSortBy,
+  getShowFavouritesModal,
+  getFavouritesList,
+  makeGetIsFavourite,
+  getFullFavouritesList,
+  getFilteredFavourites,
+  getFavouritesSearchText,
+}

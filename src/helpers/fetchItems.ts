@@ -1,5 +1,5 @@
 const url = "https://frontend-tech-test-data.s3.eu-west-1.amazonaws.com/items.json"
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid"
 
 interface ProductListItem {
   title: string
@@ -24,8 +24,8 @@ interface ExtendedProductListItem extends ProductListItem {
 
 const fetchItems = (): Promise<Array<ExtendedProductListItem>> => {
   return fetch(url)
-      .then((response) => response.json())
-      .then((response: ResponseObj) => response.items.map((item) => ({...item, id: uuidv4() })))
+    .then((response) => response.json())
+    .then((response: ResponseObj) => response.items.map((item) => ({ ...item, id: uuidv4() })))
 }
 
 export { fetchItems }

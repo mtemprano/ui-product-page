@@ -1,12 +1,12 @@
 import React from "react"
-import {useDispatch, useSelector} from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import SearchBar from "./SearchBar/SearchBar"
-import {changeSortBy, changeSortTypeBy, showFavouritesModal} from "../../actions";
-import { getChangeSortBy } from "../../selectors";
+import { changeSortBy, changeSortTypeBy, showFavouritesModal } from "../../actions"
+import { getChangeSortBy } from "../../selectors"
 import "./TopSection.css"
 
 export enum SortValues {
-  None = '',
+  None = "",
   Title = "title",
   Description = "description",
   Price = "price",
@@ -19,7 +19,7 @@ export enum SortType {
 }
 
 const TopSection = (): JSX.Element => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const sortBy = useSelector(getChangeSortBy)
 
   const handleOnSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -39,12 +39,12 @@ const TopSection = (): JSX.Element => {
       <div className="TopSectionWrapper">
         <SearchBar />
         <div className="SubSection">
-          { sortBy &&
+          {sortBy && (
             <select className="item" name="sortType" onChange={handleOnSortTypeChange}>
               <option value={SortType.Asc}>Asc</option>
               <option value={SortType.Desc}>Desc</option>
             </select>
-          }
+          )}
           <select className="item" name="sortBy" onChange={handleOnSortChange}>
             <option value={SortValues.None}>Sort by</option>
             <option value={SortValues.Title}>Title</option>

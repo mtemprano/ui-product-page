@@ -16,12 +16,14 @@ function* fetchData() {
     const data: Array<ExtendedProductListItem> = yield call(fetchItems)
     yield put(fetchSucceeded(data))
   } catch (error: unknown) {
-    yield put(fetchFailed(new Error('There has been an error retrieving data. Please try again later.')))
+    yield put(
+      fetchFailed(new Error("There has been an error retrieving data. Please try again later.")),
+    )
   }
 }
 
 function* resetPageNumber() {
-    yield put(changePaginationIndex(1))
+  yield put(changePaginationIndex(1))
 }
 
 function* watchFetchData() {
@@ -29,7 +31,10 @@ function* watchFetchData() {
 }
 
 function* watchChangeFilterTypes() {
-  yield takeLatest([changeSortTypeBy.toString(), changeSearchText.toString(), changeSortBy.toString()], resetPageNumber)
+  yield takeLatest(
+    [changeSortTypeBy.toString(), changeSearchText.toString(), changeSortBy.toString()],
+    resetPageNumber,
+  )
 }
 
 export default function* rootSaga(): Generator {

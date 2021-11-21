@@ -1,7 +1,7 @@
 .TopSection {
   width: 70%;
   margin-top: 32px;
-  background-color: #D4F1F8;
+  background-color: #d4f1f8;
   border-radius: 10px;
 }
 
@@ -17,7 +17,8 @@
   margin-top: 8px;
 }
 
-.TopSectionWrapper .SearchSection {}
+.TopSectionWrapper .SearchSection {
+}
 
 .SubSection .item {
   padding: 8px;
@@ -29,11 +30,11 @@
 }
 
 .SubSection button {
-  background-color: #A7DBF3;
+  background-color: #a7dbf3;
 }
 
 .SubSection button:active {
-  background-color: #5DACD4;
+  background-color: #5dacd4;
 }
 
 .SubSection select {

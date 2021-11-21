@@ -13,4 +13,16 @@ const showFavouritesModal = createAction<boolean>("SHOW_FAVOURITES_MODAL")
 const addItemToFavourites = createAction<string>("ADD_ITEM_TO_FAVOURITES")
 const removeItemFromFavourites = createAction<string>("REMOVE_ITEM_FROM_FAVOURITES")
 
-export { fetchRequested, fetchSucceeded, fetchFailed, changePaginationIndex, changeSearchText, changeFavouritesSearchText, changeSortBy, changeSortTypeBy, showFavouritesModal, addItemToFavourites, removeItemFromFavourites }
+export {
+  fetchRequested,
+  fetchSucceeded,
+  fetchFailed,
+  changePaginationIndex,
+  changeSearchText,
+  changeFavouritesSearchText,
+  changeSortBy,
+  changeSortTypeBy,
+  showFavouritesModal,
+  addItemToFavourites,
+  removeItemFromFavourites,
+}
