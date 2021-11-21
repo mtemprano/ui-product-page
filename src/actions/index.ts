@@ -8,5 +8,6 @@ const changePaginationIndex = createAction<number>("CHANGE_PAGINATION_INDEX")
 const changeSearchText = createAction<string>("CHANGE_SEARCH_TEXT")
 const changeSortBy = createAction<string>("CHANGE_SORT_BY")
 const changeSortTypeBy = createAction<string>("CHANGE_SORT_TYPE_BY")
+const showFavouritesModal = createAction<boolean>("SHOW_FAVOURITES_MODAL")
 
-export { fetchRequested, fetchSucceeded, fetchFailed, changePaginationIndex, changeSearchText, changeSortBy, changeSortTypeBy }
+export { fetchRequested, fetchSucceeded, fetchFailed, changePaginationIndex, changeSearchText, changeSortBy, changeSortTypeBy, showFavouritesModal }

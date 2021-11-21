@@ -1,7 +1,7 @@
 import React from "react"
 import {useDispatch, useSelector} from "react-redux"
 import SearchBar from "./SearchBar/SearchBar"
-import {changeSortBy, changeSortTypeBy} from "../../actions";
+import {changeSortBy, changeSortTypeBy, showFavouritesModal} from "../../actions";
 import { getChangeSortBy } from "../../selectors";
 import "./TopSection.css"
 
@@ -30,6 +30,10 @@ const TopSection = () => {
     dispatch(changeSortTypeBy(e.target.value))
   }
 
+  const handleShowFavouritesClick = () => {
+    dispatch(showFavouritesModal(true))
+  }
+
   return (
     <div className="TopSection">
       <div className="TopSectionWrapper">
@@ -48,7 +52,7 @@ const TopSection = () => {
             <option value={SortValues.Price}>Price</option>
             <option value={SortValues.Email}>Email</option>
           </select>
-          <button className="item" type="button">
+          <button className="item" type="button" onClick={handleShowFavouritesClick}>
             Show favourites
           </button>
         </div>

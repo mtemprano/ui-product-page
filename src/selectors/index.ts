@@ -4,5 +4,6 @@ import getListItems from "./getListItems"
 import getPaginationIndex from "./getPaginationIndex"
 import getProductListSearch from "./getProductListSearch"
 import getChangeSortBy from "./getChangeSortBy"
+import getShowFavouritesModal from "./getShowFavouritesModal"
 
-export { getFilteredPageItems, getIsFetchLoading, getListItems, getPaginationIndex, getProductListSearch, getChangeSortBy }
+export { getFilteredPageItems, getIsFetchLoading, getListItems, getPaginationIndex, getProductListSearch, getChangeSortBy, getShowFavouritesModal }

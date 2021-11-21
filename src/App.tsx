@@ -1,14 +1,14 @@
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchRequested } from "./actions"
-import { TopSection, ProductList, PaginationBar } from "./components"
-import { getIsFetchLoading } from "./selectors"
-
+import {TopSection, ProductList, PaginationBar, Modal} from "./components"
+import { getIsFetchLoading, getShowFavouritesModal } from "./selectors"
 import "./App.css"
 
 function App() {
   const dispatch = useDispatch()
   const isFetchLoading = useSelector(getIsFetchLoading)
+  const showFavouritesModal = useSelector(getShowFavouritesModal)
 
   useEffect(() => {
     dispatch(fetchRequested())
@@ -23,6 +23,7 @@ function App() {
           <TopSection />
           <ProductList />
           <PaginationBar />
+          { showFavouritesModal && <Modal /> }
         </>
       )}
     </div>
