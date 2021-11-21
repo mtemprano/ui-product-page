@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Simple Portfolio App
 
 ## Available Scripts
 
@@ -28,6 +26,18 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn run format:check`
+
+Runs the prettier configuration against the full project and return an error code if it detects unformatted code
+
+### `yarn run lint`
+
+Runs the linter and `yarn run format:check` at the same time. Returns an error code if code isn't up to standard
+
+### `yarn run format`
+
+Runs the prettier configuration against the full project and automatically formats all the code
 
 ### `yarn eject`
 
