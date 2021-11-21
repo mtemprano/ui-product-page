@@ -26,8 +26,7 @@
     "test": "jest",
     "lint": "eslint . --ext .js --ext .jsx && yarn run format:check",
     "format": "prettier --write .",
-    "format:check": "prettier --check ./",
-    "eject": "react-scripts eject"
+    "format:check": "prettier --check ./"
   },
   "eslintConfig": {
     "extends": [
